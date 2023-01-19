@@ -129,7 +129,7 @@ class MoneyTest {
     @Order(6)
     @DisplayName("Проверка метода сложения")
     @ParameterizedTest(name = "{0},{1}+{2},{3}={4},{5}")
-    @CsvSource({"1,3,1,3,2,6","2,5,2,5,4,10", "1,2,1,2,2,4"})
+    @CsvSource({"1,3,1,3,2,6","2,5,2,5,4,10", "1,2,1,2,2,4", "1,90,1,20,3,10"})
     void addition(long h1, byte k1, long h2, byte k2, long rh, byte rk)
             throws InvocationTargetException, NoSuchMethodException, InstantiationException, IllegalAccessException {
         mathCheck(new Object[]{h1, k1, h2, k2, rh, rk}, "addition");
@@ -138,7 +138,7 @@ class MoneyTest {
     @Order(7)
     @DisplayName("Проверка метода вычитания")
     @ParameterizedTest(name = "{0},{1}-{2},{3}={4},{5}")
-    @CsvSource({"3,10,1,3,2,7","3,5,2,5,1,0", "5,5,1,4,4,1"})
+    @CsvSource({"3,10,1,3,2,7","3,5,2,5,1,0", "5,5,1,4,4,1", "1,10,0,20,0,90"})
     void subtraction(long num1, byte den1, long num2, byte den2, long rnum, byte rden) throws InvocationTargetException, NoSuchMethodException, InstantiationException, IllegalAccessException {
         mathCheck(new Object[]{num1, den1, num2, den2, rnum, rden}, "subtraction");
     }
@@ -146,7 +146,7 @@ class MoneyTest {
     @Order(8)
     @DisplayName("Проверка метода умножения")
     @ParameterizedTest(name = "{0},{1}*{2}={3},{4}")
-    @CsvSource({"5,0,2,10,0","3,5,2,6,10", "10,0,10,100,0"})
+    @CsvSource({"5,0,2,10,0","3,5,2,6,10", "10,0,10,100,0", "3,30,3.5,11,55"})
     void multiplication(long num1, byte den1, double value, long rnum, byte rden) throws InvocationTargetException, NoSuchMethodException, InstantiationException, IllegalAccessException {
         mathCheckDouble(new Object[]{num1, den1, value, rnum, rden}, "multiply");
     }
@@ -154,7 +154,7 @@ class MoneyTest {
     @Order(9)
     @DisplayName("Проверка метода деления")
     @ParameterizedTest(name = "{0},{1}/{2}={3},{4}")
-    @CsvSource({"2,3,1,2,3","10,0,2,5,0", "15,15,5,3,3"})
+    @CsvSource({"2,3,1,2,3","10,0,2,5,0", "15,15,5,3,3", "11,55,3.5,3,30"})
     void division(long num1, byte den1, double value, long rnum, byte rden) throws NoSuchMethodException, InstantiationException, IllegalAccessException, InvocationTargetException {
         mathCheckDouble(new Object[]{num1, den1, value, rnum, rden}, "division");
     }

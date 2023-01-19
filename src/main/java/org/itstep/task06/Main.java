@@ -1,5 +1,7 @@
 package org.itstep.task06;
 
+import java.util.Arrays;
+
 /**
  * Задание
  * Описать  базовый  класс  MainString  (Строка).
@@ -24,6 +26,5 @@ package org.itstep.task06;
  */
 public class Main {
     public static void main(String[] args) {
-
     }
 }

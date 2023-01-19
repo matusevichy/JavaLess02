@@ -126,7 +126,7 @@ class FractionTest {
     @Order(6)
     @DisplayName("Проверка метода сложения")
     @ParameterizedTest(name = "{0}/{1}+{2}/{3}={4}/{5}")
-    @CsvSource({"1,3,1,3,2,3","2,5,2,5,4,5", "1,2,1,2,1,1"})//числитель/знаменатель + числитель/знаменатель = числитель/занменатель
+    @CsvSource({"1,3,1,3,2,3","2,5,2,5,4,5", "1,2,1,2,1,1", "1,6,3,6,2,3"})//числитель/знаменатель + числитель/знаменатель = числитель/занменатель
     void addition(int num1, int den1, int num2, int den2, int rnum, int rden)
             throws InvocationTargetException, NoSuchMethodException, InstantiationException, IllegalAccessException {
         mathCheck(new int[]{num1, den1, num2, den2, rnum, rden}, "addition");
@@ -135,7 +135,7 @@ class FractionTest {
     @Order(7)
     @DisplayName("Проверка метода вычитания")
     @ParameterizedTest(name = "{0}/{1}-{2}/{3}={4}/{5}")
-    @CsvSource({"2,3,1,3,1,3","3,5,2,5,1,5", "5,4,1,4,1,1"})//числитель/знаменатель - числитель/знаменатель = числитель/занменатель
+    @CsvSource({"2,3,1,3,1,3","3,5,2,5,1,5", "5,4,1,4,1,1", "5,6,1,6,2,3"})//числитель/знаменатель - числитель/знаменатель = числитель/занменатель
     void subtraction(int num1, int den1, int num2, int den2, int rnum, int rden) throws InvocationTargetException, NoSuchMethodException, InstantiationException, IllegalAccessException {
         mathCheck(new int[]{num1, den1, num2, den2, rnum, rden}, "subtraction");
     }
